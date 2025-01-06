@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!-- Belgenin türünü belirtir -->
+<html lang="en">
+<!-- HTML belgesinin dilini belirtir -->
+<head>
+    <!-- Meta bilgiler ve başlık elemanlarını içerir -->
+    <meta charset="UTF-8">
+    <!-- Karakter kodlamasını belirtir -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Mobil cihazlarda duyarlı tasarım için ayar -->
+    <title>Kitap Market </title>
+    <!-- Sayfa başlığını belirtir -->
+    <link rel="stylesheet" href="stylez.css">
+    <!-- Harici bir CSS dosyasını bağlar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Font Awesome kütüphanesini bağlar -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Alternatif bir Font Awesome sürümünü bağlar -->
+</head>
+<body>
+    <!-- Sayfa içeriği buradan başlar -->
+    <nav class="navbar">
+        <!-- Navigasyon menüsü -->
+        <h2 class="title">Kitap Market</h2>
+        <!-- Site başlığı -->
+        <ul class="menu">
+            <li class="active">Books</li>
+            <li class="dropdown">
+                Ürünler
+                <ul class="submenu">
+                    <li onclick="filterBooks('Roman')">Roman</li>
+                    <li onclick="filterBooks('Bilim Kurgu')">Bilim Kurgu</li>
+                    <li onclick="filterBooks('Klasikler')">Klasikler</li>
+                    <li onclick="filterBooks('Çocuk Kitapları')">Çocuk Kitapları</li>
+                </ul>
+            </li>
+            
+            <li class="clickable" onclick="window.location.href='about.html'">About</li>
+        </ul>
+        
+        <ul class="menu_gorsel">
+            <!-- Görsel menü -->
+            <li id="search-box">
+                <!-- Arama kutusunu içerir -->
+                    <i class="fa-solid fa-magnifying-glass" id="search-icon">
+                        <input type="text" id="search-input" placeholder="Kitap adı veya Yazar adı girin..." onkeyup="searchBooks()">
+                    </i>
+                    
+                </i>
+            </li>
+            <li id="personIcon"><i class="fa-solid fa-person"></i></li>
+            <!-- Kullanıcı ikonunu gösterir -->
+            <li class="basket_icon">
+                <!-- Sepet ikonu -->
+                <i class="fa-solid fa-basket-shopping" id="openBasket"></i>
+                <!-- Sepet simgesi -->
+                <span id="basket-count" class="basket-count">0</span>
+                <!-- Sepetteki ürün sayısını gösterir -->
+            </li>
+        </ul>
+    </nav>
+
+        <!-- Slider'ın altına yerleştirilecek alan -->
+<div id="searchResultsContainer" class="search-results-container">
+    <h2>Arama Sonuçları</h2>
+    <div id="searchResults" class="search-results"></div>
+</div>
+
+
+    <div class="slider-container">
+        <!-- Kaydırıcı konteyneri -->
+        <div class="slider">
+            <!-- Kaydırıcı resimleri -->
+             
+            <img class="slider-image" src="https://files.bundesign.com/dosyalar/2020/06/flamingo-defter-kalem-seti.jpg" alt="Kitap 1">
+            <img class="slider-image" src="https://static.daktilo.com/sites/1515/uploads/2021/11/28/2622-0.jpg" alt="Kitap 2">
+            <img class="slider-image" src="https://cdn.webtekno.com/media/cache/content_detail/article/147109/bu-ay-raflarda-neler-var-okuyanlarin-tercihi-olan-temmuz-ayinin-cok-satan-kitaplari-1722151707.png" alt="Kitap 3">
+            <img class="slider-image" src="https://frpnet.net/wp-content/uploads/2021/08/robot-kelimesini-bize-kazandiran-tiyatro-r-u-r-incelemesi-1.jpg" alt="Kitap 4">
+            <img class="slider-image" src="https://m.media-amazon.com/images/I/81QJiJKwjBL._AC_UF1000,1000_QL80_.jpg" alt="Kitap 5">
+        
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">
+            <!-- Geri düğmesi -->
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="next" onclick="changeSlide(1)">
+            <!-- İleri düğmesi -->
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+    
+    <aside class="book-categories">
+        <!-- Kitap türlerini listeleyen yan menü -->
+        <h3>Kitap Türleri</h3>
+        <ul>
+            <li onclick="filterBooks('Tümü')">Tümü</li>
+            <li onclick="filterBooks('Roman')">Roman</li>
+            <li onclick="filterBooks('Bilim Kurgu')">Bilim Kurgu</li>
+            <li onclick="filterBooks('Klasikler')">Klasikler</li>
+            <li onclick="filterBooks('Çocuk Kitapları')">Çocuk Kitapları</li>
+        </ul>
+    </aside>
+    <div class="books-wrapper">
+        <!-- Kitaplar için genel sarıcı -->
+        <h2>Popüler Kitaplar</h2>
+        <div class="books-container">
+            <!-- Kitaplar için konteyner -->
+            <!-- Her bir kitap için ayrı kart -->
+            <div class="book-card" data-name="1984" data-author="George Orwel" data-genre="Roman">
+                <span class="category">Roman</span>
+                <img src="https://i.dr.com.tr/cache/600x600-0/originals/0000000064038-1.jpg" alt="Kitap 1">
+                <h3>1984</h3>
+                <p>Yazar: George Orwel</p>
+                <p>Tür: Roman</p>
+                <span class="old-price">150₺</span>
+                <span class="new-price">100₺</span>
+                <button class="add-to-basket" data-name="1984" data-price="150" data-discount="100">Sepete Ekle</button>
+            </div>
+                
+                <div class="book-card" data-name="Hayvan Çiftliği" data-author="George Orwell" data-genre="Roman" >
+                    <span class="category">Roman</span>
+                    <img src="https://img.kitapyurdu.com/v1/getImage/fn:11447395/wh:true/wi:800" alt="Kitap 2">
+                    <h3>Hayvan Çiftliği</h3>
+                    <p>Yazar: George Orwel</p>
+                    <p>Tür: Roman</p>
+                    <span class="old-price">250₺</span>
+                    <span class="new-price">200₺</span>
+                    <button class="add-to-basket">Sepete Ekle</button>
+                </div>
+                <div class="book-card"data-name="Çalıkuşu" data-author="Reşat Nuri Güntekin" data-genre="Roman" >
+                    <span class="category">Roman</span>
+                    <img src="https://i.dr.com.tr/cache/600x600-0/originals/0000000052566-1.jpg" alt="Kitap 3">
+                    <h3>Çalıkuşu</h3>
+                    <p>Yazar: Reşat Nuri Güntekin</p>
+                    <p>Tür: Roman</p>
+                    <span class="old-price">100₺</span>
+                    <span class="new-price">99₺</span>
+                    <button class="add-to-basket">Sepete Ekle</button>
+                </div>
+                <div class="book-card"data-name="Anna Karenina" data-author="Lev Tolstoy" data-genre="Roman">
+                    <span class="category">Roman</span>
+                    <img src="https://iletisim.com.tr/Images/UserFiles/Images/Spot/anna-karenina.jpg" alt="Kitap 4">
+                    <h3>Anna Karenina</h3>
+                    <p>Yazar: Lev Tolstoy</p>
+                    <p>Tür: Roman</p>
+                    <span class="old-price">80₺</span>
+                    <span class="new-price">50₺</span>
+                    <button class="add-to-basket">Sepete Ekle</button>
+                </div>
+                <div class="book-card"data-name="Madame Bovary" data-author="Gustave Flaubert" data-genre="Roman">
+                    <span class="category">Roman</span>
+                    <img src="https://img.kitapyurdu.com/v1/getImage/fn:4830071/wh:true/miw:200/mih:200" alt="Kitap 5">
+                    <h3>Madame Bovary</h3>
+                    <p>Yazar: Gustave Flaubert</p>
+                    <p>Tür: Roman</p>
+                    <span class="old-price">140₺</span>
+                    <span class="new-price">120₺</span>
+                    <button class="add-to-basket">Sepete Ekle</button>
+                </div>
+                <div class="book-card">
+                    <span class="category">Roman</span>
+                    <img src="https://img.kitapyurdu.com/v1/getImage/fn:130842/wh:true/wi:800" alt="Kitap 6">
+                    <h3>Sefiller</h3>
+                    <p>Yazar: Victor Hugo</p>
+                    <p>Tür: Roman</p>
+                    <span class="old-price">110₺</span>
+                    <span class="new-price">90₺</span>
+                    <button class="add-to-basket">Sepete Ekle</button>
+                </div>
+                <div class="book-card">
+                    <span class="category">Bilim Kurgu</span>
+                    <img src="https://img.kitapyurdu.com/v1/getImage/fn:11643404/wh:true/wi:800" alt="Kitap 7">
+                    <h3>Cesur Yeni Dünya </h3>
+                    <p>Yazar: Aldous Huxley</p>
+                    <p>Tür: Bilim Kurgu</p>
+                    <span class="old-price">350₺</span>
+                    <span class="new-price">200₺</span>
+                    <button class="add-to-basket">Sepete Ekle</button>
+                </div>
+                <div class="book-card">
+                    <span class="category">Bilim Kurgu</span>
+                    <img src="https://tr.web.img4.acsta.net/pictures/21/10/13/11/52/2707524.jpg" alt="Kitap 8">
+                    <h3>Dune</h3>
+                    <p>Yazar: Frank Herbert</p>
+                    <p>Tür: Bilim Kurgu</p>
+                    <span class="old-price">150₺</span>
+                    <span class="new-price">90₺</span>
+                    <button class="add-to-basket">Sepete Ekle</button>
+                </div>
+                <div class="book-card">
+                    <span class="category">Klasik</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn3jMklcFPKvv2EsWBRp-p_lZ1U9fTKRuPLw&s" alt="Kitap 9">
+                    <h3>Suç ve Ceza</h3>
+                    <p>Yazar: Dostoyevsky</p>
+                    <p>Tür: Klasik</p>
+                    <span class="old-price">250₺</span>
+                    <span class="new-price">180₺</span>
+                    <button class="add-to-basket">Sepete Ekle</button>
+                </div>
+
+                <div class="book-card">
+                    <span class="category">Klasik</span>
+                    <img src="https://img.kitapyurdu.com/v1/getImage/fn:11431526/wh:true/wi:800" alt="Kitap 10">
+                    <h3>Gurur ve Önyargı</h3>
+                    <p>Yazar: Jane Austen</p>
+                    <p>Tür: Klasik</p>
+                    <span class="old-price">250₺</span>
+                    <span class="new-price">180₺</span>
+                    <button class="add-to-basket">Sepete Ekle</button>
+                </div>
+
+                <div class="book-card">
+                    <span class="category">Çocuk Kitapları</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVc-uR9AYfLPgs_IU43OS8tucLVIkIrfrfxg&s" alt="Kitap 11">
+                    <h3>Küçük Prens</h3>
+                    <p>Yazar: Antoine de Saint-Exupéry</p>
+                    <p>Tür: Çocuk Kitapları</p>
+                    <span class="old-price">250₺</span>
+                    <span class="new-price">180₺</span>
+                    <button class="add-to-basket">Sepete Ekle</button>
+                </div>
+
+                <div class="book-card">
+                    <span class="category">Çocuk Kitapları</span>
+                    <img src="https://cdn.timas.com.tr/urun/alice-ve-harikalar-diyari-9786051442976.jpg" alt="Kitap 12">
+                    <h3>Alice Harikalar Diyarında</h3>
+                    <p>Yazar: Lewis Carroll</p>
+                    <p>Tür: Çocuk Kitapları</p>
+                    <span class="old-price">250₺</span>
+                    <span class="new-price">180₺</span>
+                    <button class="add-to-basket">Sepete Ekle</button>
+                </div>
+                
+            </div>
+
+<!-- Sepet Modal Popup -->
+<div id="basket-popup" class="basket-popup hidden">
+    <div class="popup-content">
+        <h3>Sepetiniz</h3>
+        <table id="basket-table">
+            <thead>
+                <tr>
+                    <th>Ürün Adı</th>
+                    <th>Fiyat</th>
+                    <th>Adet</th>
+                    <th>Toplam</th>
+                    <th>Aksiyonlar</th>
+                </tr>
+            </thead>
+            <tbody id="basket-list"></tbody>
+        </table>
+        <div class="popup-footer">
+            <p>Toplam Fiyat: <span id="total-price">0₺</span></p>
+            <button id="checkout-btn">Alışverişi Tamamla</button>
+            <button id="cancel-btn">Siparişi İptal Et</button>
+            <button id="close-btn">Kapat</button>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <div class="about-section">
+        <div class="company-info">
+            <h3>Hakkında</h3>
+            <p>Bu web sitesi, kullanıcılar için kaliteli kitapları ve kırtasiye malzemlerini uygun fiyatlarla sunmayı amaçlayan bir platformdur. Her yaştan okur için zengin kitap koleksiyonu ile kitap severlerin ilgisini çekmeyi hedefliyoruz.</p>
+        </div>
+        
+        <div class="social-media">
+            <h4>Bizi Takip Edin</h4>
+            <ul>
+                <li><a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+            </ul>
+        </div>
+        
+        <div class="contact-info">
+            <h4>İletişim</h4>
+            <p>Email: support@kitapmarket.com</p>
+            <p>Telefon: +90 123 456 7890</p>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 Kitap Market Platformu. Tüm hakları saklıdır.</p>
+    </div>
+</footer>
+</div>
+
+<div id="popup" class="popup hidden">
+    <div class="popup-content">
+        <p>Siparişi iptal etmek istediğinize emin misiniz?</p>
+        <button id="confirmButton" class="confirm-btn">Evet</button>
+        <button id="cancelButton" class="deny-btn">Hayır</button>
+    </div>
+</div>
+
+
+</body>
+
+
+<script src="script.js"></script>
+<script src="siparisiptal.js"></script>
+
+
+</html>

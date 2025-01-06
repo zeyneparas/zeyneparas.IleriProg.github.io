@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitap Market | Sign In & Sign Up</title>
+    <link rel="stylesheet" href="signin-up.css">
+</head>
+<body>
+    <div class="container">
+        <div id="signin" class="header">
+            <img src="https://w7.pngwing.com/pngs/996/971/png-transparent-book-tree-reading-color-book-knowledge-tree-illustration-tree-illustration-with-books-color-splash-text-tree-branch.png" alt="Kitap Ağacı" class="tree-image">
+            Kitap Market | Sign In
+        </div>
+        <div class="form">
+            <form id="signInForm">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Sign In</button>
+                </div>
+                <div class="form-footer">
+                    <a href="#" id="goToSignUp">Don't have an account? Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container" style="display: none;" id="signupContainer">
+        <div id="signup" class="header">
+            <img src="https://w7.pngwing.com/pngs/996/971/png-transparent-book-tree-reading-color-book-knowledge-tree-illustration-tree-illustration-with-books-color-splash-text-tree-branch.png" alt="Kitap Ağacı" class="tree-image">
+            Kitap Market | Sign Up
+        </div>
+        <div class="form">
+            <form id="signUpForm">
+                <div class="form-group">
+                    <label for="name">First Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="surname">Last Name:</label>
+                    <input type="text" id="surname" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="re-password">Confirm Password:</label>
+                    <input type="password" id="rePassword" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Sign Up</button>
+                </div>
+                <div class="form-footer">
+                    <a href="#" id="goToSignIn">Already have an account? Sign In</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    
+
+    <script src="signin-up.js"></script>
+</body>
+</html>

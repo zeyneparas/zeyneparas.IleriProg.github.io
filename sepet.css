@@ -1,0 +1,204 @@
+Genel Reset 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #fdf0f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigasyon */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e91e63; /* Pembe ton */
+    padding: 15px 30px;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .title {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.navbar .menu li {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu li:hover {
+    color: #f8b3d0; /* Açık pembe */
+}
+
+.navbar .menu li.active {
+    font-weight: bold;
+}
+
+.navbar .menu_gorsel {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar #search-box {
+    position: relative;
+}
+
+.navbar #search-input {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 2px solid #f06292; /* Pembe ton */
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.navbar #search-input:focus {
+    border-color: #e91e63; /* Pembe ton */
+}
+
+.navbar .basket-icon-container {
+    position: relative;
+    cursor: pointer;
+}
+
+.navbar .basket_icon {
+    font-size: 22px;
+}
+
+.navbar .basket-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #e91e63;
+    border-radius: 50%;
+    color: white;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+.header {
+    background-color: #ff6f91;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.basket-icon button {
+    background-color: #ffffff;
+    color: #ff6f91;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.basket-page {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#basket-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#basket-table th, #basket-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+#basket-table th {
+    background-color: #ff6f91;
+    color: white;
+}
+
+.basket-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.basket-item img {
+    width: 50px;
+    height: auto;
+    margin-right: 15px;
+}
+
+.basket-item-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.basket-summary {
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.popup-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+#checkout-btn {
+    background-color: #ff6f91;
+    color: white;
+}
+
+#cancel-btn {
+    background-color: #d9534f;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

@@ -1,0 +1,118 @@
+/* Pembe Temalı Tasarım */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.navbar {
+    background-color: #ff69b4; /* Pembe renk */
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .title {
+    color: white;
+    font-size: 40px;
+    position: absolute;  /* Bu satırı ekliyoruz */
+    left: 50%;           /* Başlığın sol kenarını %50'ye kaydırıyoruz */
+    transform: translateX(-50%); 
+
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .menu li {
+    color: white;
+    cursor: pointer;
+}
+
+.navbar .menu .active {
+    font-weight: bold;
+}
+
+.about-section {
+    padding: 40px 20px;
+    background-color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h1 {
+    text-align: center;
+    color: #ff69b4; /* Pembe renk */
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.store-locations {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.store {
+    background-color: #ffefff; /* Hafif pembe arka plan */
+    padding: 15px;
+    border-radius: 8px;
+    width: 30%;
+    text-align: center;
+}
+
+.store h3 {
+    color: #ff69b4;
+    font-size: 22px;
+}
+
+.store p {
+    font-size: 16px;
+}
+
+.social-media {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-media ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media ul li {
+    font-size: 24px;
+}
+
+.social-media ul li a {
+    color: #ff69b4;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #ff69b4;
+    color: white;
+    text-align: center;
+    padding: 1px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    
+}
+

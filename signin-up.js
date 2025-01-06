@@ -7,7 +7,7 @@ document.getElementById('signInForm').addEventListener('submit', function(event)
 
     if (storedUser && enteredEmail === storedUser.email && enteredPassword === storedUser.password) {
         alert('Login Successful! Redirecting to homepage.');
-        window.location.href = 'indexz.html';
+        window.location.href = 'index.html';
     } else {
         alert('Invalid credentials!');
     }
